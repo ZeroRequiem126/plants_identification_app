@@ -34,34 +34,156 @@
   background-color: #acacac !important;
 }
 
-body {
-  /* ヘッダー */
-  /* メイン画面 */
-  /* 各カテゴリ */
-  /* 検索ボタン */
-  /* フッターメニュー */
-  /* results.php */
+.align-right {
+  text-align: right !important;
 }
 
-body header {
+/* 非表示化 */
+.not-active {
+  display: none;
+}
+
+/* フキダシ一般 */
+.balloon-general {
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.balloon-general .faceicon {
+  margin-left: 10px;
+  -webkit-box-ordinal-group: 3 !important;
+      -ms-flex-order: 2 !important;
+          order: 2 !important;
+}
+
+.balloon-general .faceicon img {
+  width: 200px;
+  height: auto;
+}
+
+.balloon-general .says {
+  font-size: 1.2em;
+  max-width: 500px;
+  font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  vertical-align: middle;
+  line-height: 1.5;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #ffa200;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 !important;
+}
+
+.balloon-general .says:after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+  right: -26px;
+  border-left: 22px solid #ffa200;
+}
+
+/* ヘッダー */
+header {
   background-color: #3cb371;
 }
 
-body header a {
+header a {
   font-family: 'Wawati SC',sans-serif;
   color: white !important;
 }
 
-body header #site-title {
+header #site-title {
   font-size: 1.8em;
 }
 
-body header .menu-item {
+header .navbar-nav {
+  margin-left: auto;
+  padding: 0 20px;
+}
+
+header .navbar-nav .menu-item {
   font-size: 1.5em;
   padding-left: 20px !important;
 }
 
-body .jumbotron {
+/* index.php */
+.balloon {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.balloon .faceicon {
+  margin-left: 10px;
+  -webkit-box-ordinal-group: 3 !important;
+      -ms-flex-order: 2 !important;
+          order: 2 !important;
+}
+
+.balloon .faceicon img {
+  width: 200px;
+  height: auto;
+}
+
+.balloon .says {
+  font-size: 1.1em;
+  max-width: 500px;
+  font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  vertical-align: middle;
+  line-height: 1.5;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #ffa200;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 !important;
+}
+
+.balloon .says:after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+  right: -26px;
+  border-left: 22px solid #ffa200;
+}
+
+.balloon .no-favorite {
+  padding: 50px;
+}
+
+.jumbotron {
   background: url("img/main-background-image.png") center no-repeat;
   background-size: cover;
   width: 100%;
@@ -69,10 +191,8 @@ body .jumbotron {
   position: relative;
 }
 
-body .jumbotron .container {
-  color: white;
+.jumbotron .container {
   font-family: 'HanziPen SC',sans-serif;
-  font-weight: bold;
   position: absolute;
   width: 100%;
   text-align: center;
@@ -83,26 +203,42 @@ body .jumbotron .container {
   transform: translateY(-50%) translateX(-50%);
 }
 
-body .jumbotron .container p {
-  padding: 20px 0;
-  line-height: 2;
-  font-size: 1.3em;
+.jumbotron .container p {
+  display: inline;
+  padding: 10px 10px;
+  line-height: 3.5;
+  font-size: 1.4em;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
-body .category-1, body .category-2, body .category-3, body .category-4, body .category-5, body .category-6, body .category-7, body .category-8 {
+.jumbotron .container p span {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.jumbotron .container p .intro-emphasis1 {
+  color: red;
+}
+
+.jumbotron .container p .intro-emphasis2 {
+  color: #2f00ff;
+}
+
+/* 各カテゴリ */
+.category {
   padding: 2.0em 0 4.0em;
   color: white;
 }
 
-body .category-1 h2, body .category-2 h2, body .category-3 h2, body .category-4 h2, body .category-5 h2, body .category-6 h2, body .category-7 h2, body .category-8 h2 {
+.category h2 {
   text-align: center;
-  padding: 40px 0;
+  padding: 20px 0;
   margin: 0;
   font-family: 'HanziPen SC',sans-serif;
   font-weight: bold;
 }
 
-body .category-1 ul, body .category-2 ul, body .category-3 ul, body .category-4 ul, body .category-5 ul, body .category-6 ul, body .category-7 ul, body .category-8 ul {
+.category ul {
   padding: 0;
   text-align: center;
   list-style: none;
@@ -116,7 +252,7 @@ body .category-1 ul, body .category-2 ul, body .category-3 ul, body .category-4 
           justify-content: center;
 }
 
-body .category-1 ul li, body .category-2 ul li, body .category-3 ul li, body .category-4 ul li, body .category-5 ul li, body .category-6 ul li, body .category-7 ul li, body .category-8 ul li {
+.category ul li {
   border-radius: 50%;
   text-align: center;
   width: 250px;
@@ -125,46 +261,18 @@ body .category-1 ul li, body .category-2 ul li, body .category-3 ul li, body .ca
   margin: 20px;
 }
 
-body .category-1 ul li img, body .category-2 ul li img, body .category-3 ul li img, body .category-4 ul li img, body .category-5 ul li img, body .category-6 ul li img, body .category-7 ul li img, body .category-8 ul li img {
+.category ul li img {
   margin: 0 auto;
 }
 
-body .category-1 ul li #tree-size-1, body .category-2 ul li #tree-size-1, body .category-3 ul li #tree-size-1, body .category-4 ul li #tree-size-1, body .category-5 ul li #tree-size-1, body .category-6 ul li #tree-size-1, body .category-7 ul li #tree-size-1, body .category-8 ul li #tree-size-1 {
-  width: 75%;
-  position: absolute;
-  top: 5%;
-  left: 13%;
-}
-
-body .category-1 ul li #tree-size-2, body .category-2 ul li #tree-size-2, body .category-3 ul li #tree-size-2, body .category-4 ul li #tree-size-2, body .category-5 ul li #tree-size-2, body .category-6 ul li #tree-size-2, body .category-7 ul li #tree-size-2, body .category-8 ul li #tree-size-2 {
-  width: 55%;
-  position: absolute;
-  top: 20%;
-  left: 23%;
-}
-
-body .category-1 ul li #tree-size-3, body .category-2 ul li #tree-size-3, body .category-3 ul li #tree-size-3, body .category-4 ul li #tree-size-3, body .category-5 ul li #tree-size-3, body .category-6 ul li #tree-size-3, body .category-7 ul li #tree-size-3, body .category-8 ul li #tree-size-3 {
-  width: 40%;
-  position: absolute;
-  top: 32%;
-  left: 29%;
-}
-
-body .category-1 ul li #tree-size-4, body .category-2 ul li #tree-size-4, body .category-3 ul li #tree-size-4, body .category-4 ul li #tree-size-4, body .category-5 ul li #tree-size-4, body .category-6 ul li #tree-size-4, body .category-7 ul li #tree-size-4, body .category-8 ul li #tree-size-4 {
-  width: 50%;
-  position: absolute;
-  top: 17%;
-  left: 25%;
-}
-
-body .category-1 ul li .mark-question, body .category-2 ul li .mark-question, body .category-3 ul li .mark-question, body .category-4 ul li .mark-question, body .category-5 ul li .mark-question, body .category-6 ul li .mark-question, body .category-7 ul li .mark-question, body .category-8 ul li .mark-question {
+.category ul li .mark-question {
   width: 40%;
   position: absolute;
   top: 20%;
   left: 30%;
 }
 
-body .category-1 ul li p, body .category-2 ul li p, body .category-3 ul li p, body .category-4 ul li p, body .category-5 ul li p, body .category-6 ul li p, body .category-7 ul li p, body .category-8 ul li p {
+.category ul li p {
   font-size: 1.2rem;
   font-weight: bold;
   position: absolute;
@@ -175,316 +283,316 @@ body .category-1 ul li p, body .category-2 ul li p, body .category-3 ul li p, bo
   line-height: 1.0em;
 }
 
-body .category-1 ul li p span, body .category-2 ul li p span, body .category-3 ul li p span, body .category-4 ul li p span, body .category-5 ul li p span, body .category-6 ul li p span, body .category-7 ul li p span, body .category-8 ul li p span {
+.category ul li p span {
   font-size: 0.8em;
 }
 
-body .category-1 ul .category-item, body .category-2 ul .category-item, body .category-3 ul .category-item, body .category-4 ul .category-item, body .category-5 ul .category-item, body .category-6 ul .category-item, body .category-7 ul .category-item, body .category-8 ul .category-item {
+.category ul .category-item {
   cursor: pointer;
 }
 
-body .category-1 .form, body .category-2 .form, body .category-3 .form, body .category-4 .form, body .category-5 .form, body .category-6 .form, body .category-7 .form, body .category-8 .form {
+.category .form {
   text-align: center;
   margin: 0 auto;
 }
 
-body .category-1 .form select, body .category-2 .form select, body .category-3 .form select, body .category-4 .form select, body .category-5 .form select, body .category-6 .form select, body .category-7 .form select, body .category-8 .form select {
+.category .form select {
   padding: 10px;
   margin-top: 10px;
   font-size: 20px;
 }
 
-body .category-2 #leaf-attachment-1 {
+#category-1 #leaf-attachment-1 {
   width: 60%;
   position: absolute;
   top: 17%;
   left: 20%;
 }
 
-body .category-2 #leaf-attachment-2 {
+#category-1 #leaf-attachment-2 {
   width: 60%;
   position: absolute;
   top: 15%;
   left: 20%;
 }
 
-body .category-2 #leaf-attachment-3 {
+#category-1 #leaf-attachment-3 {
   width: 50%;
   position: absolute;
   top: 15%;
   left: 25%;
 }
 
-body .category-2 #leaf-attachment-4 {
+#category-1 #leaf-attachment-4 {
   width: 45%;
   position: absolute;
   top: 7%;
   left: 24%;
 }
 
-body .category-3 #leaf-pattern-1 {
+#category-2 #leaf-pattern-1 {
   width: 25%;
   position: absolute;
   top: 15%;
   left: 38%;
 }
 
-body .category-3 #leaf-pattern-2 {
-  width: 40%;
+#category-2 #leaf-pattern-2 {
+  width: 38%;
   position: absolute;
   top: 12%;
   left: 30%;
 }
 
-body .category-3 #leaf-pattern-3 {
-  width: 45%;
+#category-2 #leaf-pattern-3 {
+  width: 42%;
   position: absolute;
   top: 5%;
-  left: 27%;
+  left: 30%;
 }
 
-body .category-3 #leaf-pattern-4 {
+#category-2 #leaf-pattern-4 {
   width: 55%;
   position: absolute;
   top: 10%;
   left: 23%;
 }
 
-body .category-3 #leaf-pattern-5 {
+#category-2 #leaf-pattern-5 {
   width: 60%;
   position: absolute;
   top: 17%;
   left: 20%;
 }
 
-body .category-4 #leaf-shape-1 {
+#category-3 #leaf-shape-1 {
   width: 50%;
   position: absolute;
   top: 7%;
   left: 26%;
 }
 
-body .category-4 #leaf-shape-2 {
+#category-3 #leaf-shape-2 {
   width: 55%;
   position: absolute;
   top: 10%;
   left: 23%;
 }
 
-body .category-4 #leaf-shape-3 {
+#category-3 #leaf-shape-3 {
   width: 40%;
   position: absolute;
   top: 7%;
   left: 30%;
 }
 
-body .category-4 #leaf-shape-4 {
+#category-3 #leaf-shape-4 {
   width: 50%;
   position: absolute;
   top: 10%;
   left: 26%;
 }
 
-body .category-4 #leaf-shape-5 {
+#category-3 #leaf-shape-5 {
   width: 40%;
   position: absolute;
   top: 10%;
   left: 30%;
 }
 
-body .category-4 #leaf-shape-6 {
+#category-3 #leaf-shape-6 {
   width: 30%;
   position: absolute;
   top: 7%;
   left: 35%;
 }
 
-body .category-4 #leaf-shape-7 {
+#category-3 #leaf-shape-7 {
   width: 40%;
   position: absolute;
   top: 10%;
   left: 30%;
 }
 
-body .category-4 #leaf-shape-8 {
+#category-3 #leaf-shape-8 {
   width: 40%;
   position: absolute;
   top: 7%;
   left: 30%;
 }
 
-body .category-4 #leaf-shape-9 {
+#category-3 #leaf-shape-9 {
   width: 25%;
   position: absolute;
   top: 3%;
   left: 37%;
 }
 
-body .category-4 #leaf-shape-10 {
+#category-3 #leaf-shape-10 {
   width: 25%;
   position: absolute;
   top: 12%;
   left: 38%;
 }
 
-body .category-4 #leaf-shape-11 {
+#category-3 #leaf-shape-11 {
   width: 15%;
   position: absolute;
   top: 10%;
   left: 43%;
 }
 
-body .category-5 #leaf-blade-1 {
+#category-4 #leaf-blade-1 {
   width: 30%;
   position: absolute;
   top: 11%;
   left: 34%;
 }
 
-body .category-5 #leaf-blade-2 {
+#category-4 #leaf-blade-2 {
   width: 50%;
   position: absolute;
   top: 10%;
   left: 24%;
 }
 
-body .category-5 #leaf-blade-3 {
+#category-4 #leaf-blade-3 {
   width: 55%;
   position: absolute;
   top: 10%;
   left: 22%;
 }
 
-body .category-5 #leaf-blade-4 {
+#category-4 #leaf-blade-4 {
   width: 55%;
   position: absolute;
   top: 12%;
   left: 23%;
 }
 
-body .category-5 #leaf-blade-5 {
+#category-4 #leaf-blade-5 {
   width: 40%;
   position: absolute;
   top: 10%;
   left: 31%;
 }
 
-body .category-6 #leaf-edge-1 {
+#category-5 #leaf-edge-1 {
   width: 45%;
   position: absolute;
   top: 7%;
   left: 30%;
 }
 
-body .category-6 #leaf-edge-2 {
+#category-5 #leaf-edge-2 {
   width: 45%;
   position: absolute;
   top: 9%;
   left: 30%;
 }
 
-body .category-6 #leaf-edge-3 {
+#category-5 #leaf-edge-3 {
   width: 45%;
   position: absolute;
   top: 7%;
   left: 30%;
 }
 
-body .category-6 #leaf-edge-4 {
+#category-5 #leaf-edge-4 {
   width: 45%;
   position: absolute;
   top: 9%;
   left: 30%;
 }
 
-body .category-6 #leaf-edge-5 {
+#category-5 #leaf-edge-5 {
   width: 45%;
   position: absolute;
   top: 9%;
   left: 30%;
 }
 
-body .category-6 #leaf-edge-6 {
+#category-5 #leaf-edge-6 {
   width: 45%;
   position: absolute;
   top: 9%;
   left: 30%;
 }
 
-body .category-6 #leaf-edge-7 {
+#category-5 #leaf-edge-7 {
   width: 45%;
   position: absolute;
   top: 9%;
   left: 30%;
 }
 
-body .category-7 #leaf-vein-1 {
+#category-6 #leaf-vein-1 {
   width: 35%;
   position: absolute;
   top: 10%;
   left: 33%;
 }
 
-body .category-7 #leaf-vein-2 {
+#category-6 #leaf-vein-2 {
   width: 35%;
   position: absolute;
   top: 9%;
   left: 33%;
 }
 
-body .category-7 #leaf-vein-3 {
+#category-6 #leaf-vein-3 {
   width: 35%;
   position: absolute;
   top: 3%;
   left: 33%;
 }
 
-body .category-7 #leaf-vein-4 {
+#category-6 #leaf-vein-4 {
   width: 45%;
   position: absolute;
   top: 13%;
   left: 27%;
 }
 
-body .category-8 #leaf-lateral-vein-1 {
+#category-7 #leaf-lateral-vein-1 {
   width: 40%;
   position: absolute;
   top: 10%;
   left: 33%;
 }
 
-body .category-8 #leaf-lateral-vein-2 {
+#category-7 #leaf-lateral-vein-2 {
   width: 45%;
   position: absolute;
   top: 9%;
   left: 27%;
 }
 
-body .category-8 #leaf-lateral-vein-3 {
+#category-7 #leaf-lateral-vein-3 {
   width: 40%;
   position: absolute;
   top: 11%;
   left: 35%;
 }
 
-body .category-8 #leaf-lateral-vein-4 {
+#category-7 #leaf-lateral-vein-4 {
   width: 40%;
   position: absolute;
   top: 12%;
   left: 33%;
 }
 
-body .search-button {
-  padding: 50px 0;
+/* 検索ボタン */
+.search-button {
+  padding: 30px 0;
   text-align: center;
 }
 
-body .search-button input {
+.search-button input {
   font-family: 'Wawati SC',sans-serif;
   font-size: 30px;
   width: 200px;
   height: 100px;
-  padding: 1.0em;
   text-align: center;
   margin: 0 auto;
   font-weight: bold;
@@ -495,26 +603,27 @@ body .search-button input {
   border-radius: 70% 0%;
 }
 
-body .search-button input:hover {
+.search-button input:hover {
   text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83), 6px 0px 15px rgba(255, 255, 240, 0.83);
   -webkit-transition: .4s;
   transition: .4s;
   color: #ffe88b;
 }
 
-body footer {
+/* フッターメニュー */
+footer {
   height: auto;
   color: #fff;
   background-color: #3cb371;
 }
 
-body footer .container {
+footer .container {
   max-width: 1200px;
   padding: 10px 20px;
   margin: 0 auto;
 }
 
-body footer .footB {
+footer .footB {
   padding: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -527,14 +636,14 @@ body footer .footB {
           justify-content: center;
 }
 
-body footer .footB ul {
+footer .footB ul {
   text-align: center;
   margin: 0 auto;
   padding: 0;
   list-style: none;
 }
 
-body footer .footB a {
+footer .footB a {
   display: block;
   padding: 0;
   padding-bottom: 2px;
@@ -548,24 +657,77 @@ body footer .footB a {
   letter-spacing: 3px;
 }
 
-body footer .footB a:hover {
+footer .footB a:hover {
   border-bottom: 3px solid #fff;
 }
 
 @media (min-width: 1024px) {
-  body .footB ul {
+  .footB ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  body .footB a {
+  .footB a {
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 0;
   }
 }
 
-body .results h2 {
+/* トップに戻るボタン */
+.scroll-top {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 100;
+  background-color: #006329;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: #fff;
+  line-height: 80px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 70% 0%;
+}
+
+.scroll-top .scroll-top:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* favorites.php */
+.favorites-page .no-favorite {
+  padding-bottom: 20px;
+}
+
+/* details.php */
+h2 {
+  text-align: center;
+  padding: 30px 0;
+  margin: 0 auto;
+  font-family: 'HanziPen SC',sans-serif;
+  font-weight: bold;
+}
+
+#tree-detail {
+  margin-right: 10px;
+}
+
+.diary-button {
+  padding: 50px 0;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-body .btn-group {
+  margin: 0 auto;
+}
+
+h2 {
   text-align: center;
   padding: 40px 0;
   margin: 0 auto;
@@ -573,44 +735,614 @@ body .results h2 {
   font-weight: bold;
 }
 
-body .card-body {
-  text-align: center;
-}
-
-body .card-body .btn-group {
-  margin: 0 auto;
-}
-
-body h2 {
-  text-align: center;
-  padding: 40px 0;
-  margin: 0 auto;
-  font-family: 'HanziPen SC',sans-serif;
-  font-weight: bold;
-}
-
-body .tree-detail {
+.tree-detail {
   margin-bottom: 50px;
   text-align: center;
+  width: 100%;
+  height: auto;
 }
 
-body .tree-detail img {
+.tree-detail img {
   width: 40% !important;
   padding: 0 10px;
 }
 
-body .tree-detail .feature .feature-content {
-  padding: 30px;
+.tree-detail .feature .feature-content {
   text-align: center;
+  padding: 20px;
 }
 
-body .tree-detail .feature .feature-content p {
+.tree-detail .feature .feature-content p {
   display: inline-block;
   text-align: left;
 }
 
-body .col .card-img-top {
+.tree-detail .feature .feature-content h4 {
+  padding-top: 50px;
+}
+
+.tree-detail .recipe-link {
+  margin-top: 20px;
+}
+
+.tree-detail .recipe-link input {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #e8e8e8;
+}
+
+.tree-detail .wikipedia-link {
+  padding-top: 20px;
+}
+
+.tree-detail .col .card-img-top {
   width: 100%;
   height: auto;
+}
+
+.tree-detail a {
+  margin: 0px 10px;
+}
+
+/* signup.php */
+.signup-form {
+  background: url("img/signup-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.signup-form h2 {
+  color: white;
+}
+
+.signup-form .container {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  background: rgba(0, 150, 50, 0.8);
+  padding: 80px 0;
+}
+
+.signup-form .container h3 {
+  color: white;
+  font-weight: bold;
+  font-family: 'HanziPen SC',sans-serif;
+}
+
+.signup-form .container input {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.signup-form .container #signup-button {
+  margin-top: 10px;
+}
+
+/* goodbye.php */
+.logout-page {
+  background: url("img/logout-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.logout-page h2 {
+  color: white;
+}
+
+.logout-page .container {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  background: rgba(0, 150, 50, 0.8);
+  padding: 40px 0;
+}
+
+.logout-page .container a {
+  margin: 0px 10px;
+}
+
+/* welcome.php */
+.welcome-page {
+  background: url("img/welcome-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.welcome-page h2 {
+  color: white;
+}
+
+.welcome-page .container {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  background: rgba(0, 150, 50, 0.8);
+  padding: 80px 0;
+}
+
+.welcome-page a {
+  margin: 0px 10px;
+}
+
+/* success.php */
+.success-page {
+  background: url("img/success-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.success-page h2 {
+  color: white;
+}
+
+.success-page .container {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  background: rgba(0, 150, 50, 0.8);
+  padding: 80px 0;
+}
+
+/* login.php */
+.login-page {
+  background: url("img/login-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.login-page h2 {
+  color: white;
+}
+
+.login-page .container {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  background: rgba(0, 150, 50, 0.8);
+  padding: 80px 0;
+}
+
+.login-page .container h3 {
+  color: white;
+  font-weight: bold;
+  font-family: 'HanziPen SC',sans-serif;
+}
+
+.login-page .container input {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.login-page .container #login-button {
+  margin-top: 10px;
+}
+
+/* memo_post.php */
+.memo-post-page {
+  background: url("img/memo-post-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.memo-post-page h2 {
+  color: white;
+}
+
+.memo-post-page .container {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  background: rgba(0, 150, 50, 0.8);
+  padding: 80px 0;
+}
+
+.memo-post-page .container h3 {
+  color: white;
+  font-weight: bold;
+  font-family: 'HanziPen SC',sans-serif;
+}
+
+.memo-post-page .container input, .memo-post-page .container textarea {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.memo-post-page .container #login-button {
+  margin-top: 10px;
+}
+
+.memo-post-page .container .buttons {
+  padding: 20px;
+}
+
+.memo-post-page .container .buttons a {
+  margin: 0 10px;
+}
+
+/* memos-page.php */
+.memos-page {
+  background: url("img/memos-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  padding-top: 100px;
+}
+
+.memos-page .memo-list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.memos-page .memo-title {
+  padding: 10px 0 20px 0 !important;
+}
+
+.memos-page h2 {
+  color: white;
+}
+
+.memos-page h3 {
+  text-align: center;
+}
+
+.memos-page span {
+  color: red;
+  font-weight: bold;
+}
+
+.memos-page .leave-message {
+  text-align: center;
+  padding: 30px 0px 10px 0px;
+}
+
+/* calender.php */
+.calender-page {
+  background: url("img/memo-post-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+
+.calender-page h2 {
+  color: white;
+}
+
+.calender-page .container {
+  width: 70%;
+  padding: 50px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.calender-page .container .calender {
+  background-color: #fff;
+  padding: 30px;
+}
+
+.calender-page .container .calender h3 {
+  color: black;
+  font-weight: bold;
+  font-family: 'HanziPen SC',sans-serif;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.calender-page .container .calender tbody {
+  background-color: white;
+  border: 1px solid #aeaeae;
+}
+
+.calender-page .container .calender th {
+  text-align: center;
+  background-color: rgba(225, 225, 225, 0.8);
+}
+
+.calender-page .container .calender td {
+  height: 80px;
+  width: 10%;
+}
+
+.calender-page .container .calender tr {
+  padding: 0;
+}
+
+.calender-page .container .calender .today {
+  background: orange;
+  padding: 0;
+}
+
+.calender-page .container .calender th:nth-of-type(1), .calender-page .container .calender td:nth-of-type(1) {
+  color: red;
+}
+
+.calender-page .container .calender th:nth-of-type(7), .calender-page .container .calender td:nth-of-type(7) {
+  color: blue;
+}
+
+.calender-page .container .calender .record-button {
+  text-align: center;
+}
+
+.calender-page .container .calender .record-button a {
+  margin-top: 10px;
+}
+
+/* calender_post.php */
+.calender-post-page {
+  background: url("img/memo-post-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 750px;
+  position: relative;
+}
+
+.calender-post-page h2 {
+  color: white;
+}
+
+.calender-post-page .container {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  background: rgba(0, 150, 50, 0.8);
+  padding: 80px 0;
+}
+
+.calender-post-page .container h3 {
+  color: white;
+  font-weight: bold;
+  font-family: 'HanziPen SC',sans-serif;
+  text-align: center;
+}
+
+.calender-post-page .container input, .calender-post-page .container textarea {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.calender-post-page .container #login-button {
+  margin-top: 10px;
+}
+
+.calender-post-page .container .buttons {
+  padding: 20px;
+}
+
+.calender-post-page .container .buttons a {
+  margin: 0 10px;
+}
+
+/* chat.php */
+.chat-page {
+  background: url("img/memos-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  padding: 100px;
+}
+
+.chat-page .container div {
+  padding: 20px 20px !important;
+}
+
+.chat-page .container .memo-list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.chat-page .container .memo-title {
+  padding: 20px 0 20px 0 !important;
+  font-family: 'HanziPen SC',sans-serif;
+}
+
+.chat-page .container h2 {
+  color: white;
+}
+
+.chat-page .container .chat-date {
+  color: grey;
+}
+
+.chat-page .container h3 {
+  text-align: center;
+}
+
+.chat-page .container p {
+  padding: 0 !important;
+}
+
+.chat-page .container .chat-pagination {
+  text-align: center;
+}
+
+.chat-page .container .chat-pagination a {
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.chat-page .container .leave-message {
+  text-align: center;
+  margin: 20px 0;
+  padding: 30px 0px 10px 0px;
+}
+
+/* chat-post.php */
+.chat-post-page {
+  background: url("img/memo-post-background.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+}
+
+.chat-post-page h2 {
+  color: white;
+}
+
+.chat-post-page .container {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background: rgba(0, 150, 50, 0.8);
+  padding: 80px 0;
+}
+
+.chat-post-page .container h3 {
+  color: white;
+  font-weight: bold;
+  font-family: 'HanziPen SC',sans-serif;
+}
+
+.chat-post-page .container input, .chat-post-page .container textarea {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.chat-post-page .container #login-button {
+  margin-top: 10px;
+}
+
+.chat-post-page .container .buttons {
+  padding: 20px;
+}
+
+.chat-post-page .container .buttons a {
+  margin: 0 10px;
+}
+
+/* recipe_list.php */
+/* recipe.php */
+.recipe-page .container {
+  background-color: #f0f0f0;
+  width: 50%;
+}
+
+.recipe-page .container .recipe-container {
+  margin-bottom: 30px;
+}
+
+.recipe-page .container h2 {
+  padding: 10px;
+  font-weight: bold;
+}
+
+.recipe-page .container .image-container {
+  text-align: center;
+}
+
+.recipe-page .container .image-container img {
+  width: 50%;
+  height: auto;
+}
+
+.recipe-page .container h3 {
+  text-align: left;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.recipe-page .container .recipe-materials:nth-child(odd) {
+  background-color: #e3e3e3;
+}
+
+.recipe-page .container .recipe-materials .recipe_material_list {
+  margin: 0 !important;
+}
+
+.recipe-page .container .recipe-materials .recipe_material_list .recipe_material {
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.recipe-page .container .recipe-step .recipe-step-order {
+  font-weight: bold;
+  background-color: #3CB371;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-size: 1rem;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  width: 32px;
+  margin-right: 10px;
+}
+
+.recipe-page .container .recipe-remark {
+  margin: 30px 0;
+}
+
+.recipe-page .container .recipe-remark .recipe-remark-title {
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

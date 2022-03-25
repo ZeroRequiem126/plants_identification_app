@@ -1,0 +1,24 @@
+<header id="top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://localhost:8888/plants-identification-app/index.php" id="site-title"><img src="http://localhost:8888/plants-identification-app/img/leaf.png" width="50" height="50"> 山の恵みぺディア</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <?php if (isset($_SESSION['login'])): ?>
+                    <a class="nav-link menu-item" href="http://localhost:8888/plants-identification-app/account/goodbye.php">ログアウト</a>
+                    <a class="nav-link menu-item" href="http://localhost:8888/plants-identification-app/favorites.php">お気に入り</a>
+                    <a class="nav-link menu-item" href="http://localhost:8888/plants-identification-app/recipe_list.php">レシピ一覧</a>
+                    <a class="nav-link menu-item" href="http://localhost:8888/plants-identification-app/calender/calender.php">収穫カレンダー</a>
+                    <a class="nav-link menu-item" href="http://localhost:8888/plants-identification-app/chat/chat.php?page=1">みんなの掲示板</a>
+                <?php else: ?>
+                    <a class="nav-link menu-item" href="http://localhost:8888/plants-identification-app/account/login.php">ログイン</a>
+                    <a class="nav-link menu-item" href="http://localhost:8888/plants-identification-app/account/signup.php">新規登録</a>
+                <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

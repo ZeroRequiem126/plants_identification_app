@@ -1,8 +1,12 @@
 <?php
-    $db = new mysqli('localhost:8889', 'root', 'root', 'tree_list');
-    if (!empty($_GET["tree_height"]) && !empty($_GET["leaf_attachment"])) {
-        $table = "SELECT id, name, overview_image, application, tree_height, leaf_attachment FROM tree WHERE tree_height='".$_GET['tree_height']."' AND leaf_attachment='".$_GET['leaf_attachment']."'";
-        $sql = $db->query($table);
+    session_start();
+    require('library.php');
+
+    $PDO = dbconnect();
+
+    if (!empty($_GET["leaf_attachment"]) && !empty($_GET["leaf_pattern"]) && !empty($_GET["leaf_shape"]) && !empty($_GET["leaf_blade"]) && !empty($_GET["leaf_edge"]) && !empty($_GET["leaf_vein"]) && !empty($_GET["leaf_lateral_vein"]) ) {
+        $table = "SELECT id, name, overview_image FROM trees WHERE leaf_attachment='".$_GET['leaf_attachment']."' AND leaf_pattern='".$_GET['leaf_pattern']."' AND leaf_shape='".$_GET['leaf_shape']."' AND leaf_blade='".$_GET['leaf_blade']."' AND leaf_edge='".$_GET['leaf_edge']."' AND leaf_vein='".$_GET['leaf_vein']."' AND leaf_lateral_vein='".$_GET['leaf_lateral_vein']."'";
+        $sql = $PDO->query($table);
     }
 ?>
 <!DOCTYPE html>
@@ -13,24 +17,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>この木なんの木？</title>
+    <title>検索結果</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.php" id="site-title"><img src="img/leaf.png" width="50" height="50"> この木なんの木？</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                    <a class="nav-link menu-item" href="#">検索する</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+
+<?php include("templates/header.html"); ?>
 
     <div class="results">
         <h2>検索結果</h2>
@@ -41,7 +32,7 @@
             echo '<div class="container">';
             echo '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">';
 
-            if (!empty($_GET["tree_height"]) && !empty($_GET["leaf_attachment"])) {
+            if (!empty($_GET["leaf_attachment"]) && !empty($_GET["leaf_pattern"]) && !empty($_GET["leaf_shape"]) && !empty($_GET["leaf_blade"]) && !empty($_GET["leaf_edge"]) && !empty($_GET["leaf_vein"]) && !empty($_GET["leaf_lateral_vein"]) ) {
                 foreach ($sql as $row) {
                     echo '<div class="col">';
                     echo '<div class="card shadow-sm">';
@@ -50,9 +41,39 @@
                     echo '<h3 class="card-text">' . $row['name'] . '</h3>';
                     echo '<div class="d-flex justify-content-between align-items-center">';
                     echo '<div class="btn-group">';
-                    echo '<form method="GET" action="detail.php">';
+                    echo '<form method="GET" action="details.php">';
                     echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-                    echo '<input type="submit" value ="詳細を見る" class="btn btn-sm btn-outline-secondary">';
+                    echo '<input type="submit" value ="詳細" class="btn btn-sm btn-dark" id="tree-detail">';
+                    echo '</form>';
+
+                    if (isset($_SESSION['login'])) {
+                        echo '<form method="POST" action="">';
+                        echo '<input type="hidden" name="tree_id" value="' . $row['id'] . '">';
+                        echo '<input type="hidden" name="user_id" value="' . $_SESSION["login"] . '">';
+    
+                        $favorites = "SELECT * FROM favorites WHERE tree_id = '".$row['id']."' AND user_id = '".$_SESSION["login"]."'";
+                        $sql = $PDO->query($favorites);
+                        $sql->execute();
+                        $count = $sql->rowCount();
+
+                        if (isset($_POST['tree_id']) && isset($_POST['user_id']) && $_POST['tree_id'] == $row['id']) {
+                            if ($count == 0) {
+                                $add_to_favorite = "INSERT INTO favorites (tree_id, user_id) VALUES('".$_POST['tree_id']."', '".$_POST['user_id']."')";
+                                $sql = $PDO->query($add_to_favorite);
+                                echo '<input type="submit" value ="登録済み" class="btn btn-sm btn-success">';
+                            } else {
+                                $delete_from_favorite = "DELETE FROM favorites WHERE tree_id = '".$_POST['tree_id']."' AND user_id = '".$_POST['user_id']."'";
+                                $sql = $PDO->query($delete_from_favorite);
+                                echo '<input type="submit" value ="お気に入り登録" class="btn btn-sm btn-outline-secondary">';
+                            }
+                        } else {
+                            if ($count == 0) {
+                                echo '<input type="submit" value ="お気に入り登録" class="btn btn-sm btn-outline-secondary">';
+                            } else {
+                                echo '<input type="submit" value ="登録済み" class="btn btn-sm btn-success">';
+                            }
+                        }
+                    }
                     echo '</form>';
                     echo '</div>';
                     echo '</div>';
@@ -65,19 +86,14 @@
             echo '</div>';
             echo '</div>';
         ?>
+
+        <div class="search-button bg-white"><input type="submit" value ="再検索" class="bg-green txt-white" id="edit-button" onclick="history.back()"></div>
     </div>
+    
+    <?php include("templates/footer.html"); ?>
 
-    <footer>
-    <div class="container">
-        <nav class="footB">
-        <ul>
-            <li><a href="index.php">ホーム</a></li>
-            <li><a href="index.php#first-category">検索する</a></li>
-        </ul>
-        </nav>
-    </footer>
-
-    <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+<script src="main.js?4"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
