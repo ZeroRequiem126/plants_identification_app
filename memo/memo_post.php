@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require('../library.php');
+    require('../assets/templates/library.php');
 
     $PDO = dbconnect();
 
@@ -31,13 +31,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>メモ登録</title>
 </head>
 <body>
 
-<?php include("../templates/header.html"); ?>
+<?php include("../assets/templates/header.html"); ?>
 
 <?php
     echo '<div class="memo-post-page">';
@@ -54,17 +54,17 @@
     echo '</div>';
     echo '<div class="buttons">';
     echo '<button type="submit" class="btn btn-lg btn-danger" id="signup-button">登録</button>';
-    echo '<a href="../favorites.php" class="btn btn-lg btn-dark">お気に入り一覧</a>';
+    echo '<a href="../tree/favorites.php" class="btn btn-lg btn-dark">お気に入り一覧</a>';
     echo '</div>';
     echo '</form>';
     echo '</div>';
     echo '</div>';
 ?>
 
-<?php include("../templates/footer.html"); ?>
+<?php include("../assets/templates/footer.html"); ?>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
-<script src="main.js"></script>
+<script src="../assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

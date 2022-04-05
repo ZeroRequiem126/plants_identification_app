@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require('../library.php');
+    require('../assets/templates/library.php');
     
     $PDO = dbconnect();
 
@@ -36,13 +36,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>ログインページ</title>
     </head>
 <body>
 
-<?php include("../templates/header.html"); ?>
+<?php include("../assets/templates/header.html"); ?>
 
 <?php
     echo '<div class="login-page">';
@@ -62,7 +62,7 @@
     echo '</div>';
 ?>
 
-<?php include("../templates/footer.html"); ?>
+<?php include("../assets/templates/footer.html"); ?>
 
 </body>
 </html>

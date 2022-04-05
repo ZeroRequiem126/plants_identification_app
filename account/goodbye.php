@@ -13,13 +13,13 @@ if (isset($_SESSION['login'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../style.css?">
+    <link rel="stylesheet" href="../assets/style/style.css?">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>ログアウト</title>
     </head>
 <body>
 
-<?php include("../templates/header.html"); ?>
+<?php include("../assets/templates/header.html"); ?>
 
 <?php
     echo '<div class="logout-page">';
@@ -27,7 +27,7 @@ if (isset($_SESSION['login'])) {
     echo '<h2>ログアウトしました</h2>';
     echo '<div class="balloon-general">';
     echo '<div class="faceicon">';
-    echo '<img src="../img/芋虫.png" width="300">';
+    echo '<img src="../img/assets/main/芋虫.png" width="300">';
     echo '</div>';
     echo '<h4 class="says">また来てね！</h4>';
     echo '</div>';
@@ -38,7 +38,7 @@ if (isset($_SESSION['login'])) {
     echo '</div>';
 ?>
 
-<?php include("../templates/footer.html"); ?>
+<?php include("../assets/templates/footer.html"); ?>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
 <script src="main.js?4"></script>
