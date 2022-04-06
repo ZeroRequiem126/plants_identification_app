@@ -1,8 +1,8 @@
 <?php
     function dbconnect() {
-        $dsn = 'mysql:dbname=tree_identification_app;host=localhost:8889';
-        $user = 'root';
-        $password = 'root';
+        $dsn = 'us-cdbr-east-05.cleardb.net';
+        $user = 'b2e469a773bc99';
+        $password = '2c381f19';
 
         try{
             $dbh = new PDO($dsn, $user, $password, [
