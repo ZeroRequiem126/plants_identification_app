@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="stylesheet" href="../assets/style/style.css?">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>レシピ一覧</title>
 </head>
@@ -20,12 +20,12 @@
 
 <?php include("../assets/templates/header.html"); ?>
 
-    <div class="results">
-        <h2>レシピ一覧</h2>
+    <div class="recipe-list">
+        <h2>レシピ</h2>
 
         <?php
 
-            echo '<div class="album py-5 bg-light">';
+            echo '<div class="album py-5 recipe-items">';
             echo '<div class="container">';
             echo '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">';
 

@@ -9,23 +9,23 @@
         exit();
     }
 
-    if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+    if (!empty($_POST['name']) && !empty($_POST['user_id']) && !empty($_POST['password'])) {
         try {
             $name = $_POST['name'];
-            $email = $_POST['email'];
+            $user_id = $_POST['user_id'];
             $password = $_POST['password'];
             $password_hash = password_hash($password,PASSWORD_DEFAULT);
 
             $_SESSION["name"] = $name;
-            $_SESSION["email"] = $email;
+            $_SESSION["user_id"] = $user_id;
 
 
-            $sql = "INSERT INTO users (name, email, password) VALUES (:name, :email, :password)";
+            $sql = "INSERT INTO users (name, user_id, password) VALUES (:name, :user_id, :password)";
             $stmt = $PDO->prepare($sql);
-            $params = array(':name' => $name, ':email' => $email, ':password' => password_hash($password,PASSWORD_DEFAULT));
+            $params = array(':name' => $name, ':user_id' => $user_id, ':password' => password_hash($password,PASSWORD_DEFAULT));
             $stmt->execute($params);
 
-            $sql2 = "SELECT * FROM users WHERE email = '".$_POST["email"]."'";
+            $sql2 = "SELECT * FROM users WHERE user_id = '".$_POST["user_id"]."'";
             $stmt = $PDO->prepare($sql2);
             $stmt->execute();
 
@@ -62,11 +62,11 @@
     echo '<form action="" method="post">';
     echo '<div class="mb-3">';
     echo '<h3>ニックネーム</h3>';
-    echo '<input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>';
+    echo '<input type="text" name="name" class="form-control" id="exampleInputuser_id1" aria-describedby="user_idHelp" required>';
     echo '</div>';
     echo '<div class="mb-3">';
-    echo '<h3>Eメール</h3>';
-    echo '<input type="text" name="email" class="form-control" id="exampleInputPassword1" required>';
+    echo '<h3>ID</h3>';
+    echo '<input type="text" name="user_id" class="form-control" id="exampleInputPassword1" required>';
     echo '</div>';
     echo '<div class="mb-3">';
     echo '<h3>パスワード</h3>';

@@ -72,7 +72,7 @@
         border-radius: 12px;
         font-weight: bold;
         color: #ffffff;
-        background: #ffe0ab;
+        background-color: #ffa200;
         box-sizing:border-box;
         margin:0 !important;
 
@@ -90,6 +90,9 @@
 header {
 
     background-color: #0F9954;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
 
     a {
         font-family: 'Wawati SC',sans-serif;
@@ -107,6 +110,10 @@ header {
         .menu-item {
             font-size: 1.5em;
             padding-left: 20px !important;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
         }
     }
 }
@@ -703,6 +710,10 @@ footer {
     .no-favorite {
         padding-bottom: 20px;
     }
+
+    .favorite-items {
+        background-color: #93C031;
+    }
 }
     
 /* details.php */
@@ -1078,8 +1089,9 @@ a {
 
         .calender {
 
-            background-color: #fff;
+            background-color: #93C031;
             padding: 30px;
+            margin-top: 50px;
 
             h3 {
                 color: rgb(0, 0, 0);
@@ -1192,14 +1204,65 @@ a {
     height: auto;
     padding: 100px;
 
-    .container {
+    .comment {
+        padding: 20px;
+        margin: 10px 20px;
+        background-color: #0F9954;
+    }
 
-        div {
-            padding: 20px 20px !important;
+    .container {
+        
+        .chat-list {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .search-comment {
+            text-align: center;
+            margin: 0 auto;
+
+            .wrap {
+
+                display: inline-block;
+                background-color: #93C031;
+                margin: 10px;
+                padding: 10px;
+                color: #fff;
+
+                p {
+                    font-weight: bold;
+                    font-size: 1.5em;
+                }
+
+                form {
+
+                    input {
+                        margin: 10px;
+                    }
+                }
+            }
+        }
+
+        .pt-3 {
+            padding: 0 !important;
+        }
+
+        .comment-item {
+            background-color: #eeeeee !important;
+            padding: 10px !important;
+            display: inline-block;
+        }
+
+        .right-comment {
+            text-align: right;
+        }
+
+        .left-comment {
+            text-align-last: left;
         }
 
         .memo-list {
-            width: 80%;
+            width: 60%;
             margin: 0 auto;
         }
         
@@ -1398,5 +1461,18 @@ a {
             }
         }
 
+    }
+}
+
+/* recipe-list.php */
+.recipe-list {
+    padding-top: 100px;
+
+    h2 {
+        z-index: 100;
+    }
+
+    .recipe-items {
+        background-color: #93C031;
     }
 }

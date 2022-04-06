@@ -32,7 +32,7 @@
             echo '<div class="album py-5 bg-light">';
             echo '<div class="container">';
             
-            if ($count >= 1) {
+            if (!empty($count) && $count >= 1) {
 
                 echo '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">';
                 if (!empty($_GET["leaf_attachment"]) && !empty($_GET["leaf_pattern"]) && !empty($_GET["leaf_shape"]) && !empty($_GET["leaf_blade"]) && !empty($_GET["leaf_edge"]) && !empty($_GET["leaf_vein"]) && !empty($_GET["leaf_lateral_vein"]) ) {
@@ -95,7 +95,7 @@
                 echo '<div class="faceicon">';
                 echo '<img src="../assets/img/main/芋虫.png" width="300">';
                 echo '</div>';
-                echo '<h4 class="says">該当する山菜が見つからなかったから、再検索してみて！</h4>';
+                echo '<h4 class="says">再検索してみて！</h4>';
                 echo '</div>';
             }
                 echo '</div>';

@@ -1,24 +1,28 @@
 <?php
     session_start();
     require('../assets/templates/library.php');
-
+    $PDO = dbconnect();
 
     if (!empty($_SESSION["login"])) {
-        if (isset($_GET['page'])) {
-            $page = (int)$_GET['page'];
-        } else {
-            $page = 1;
-        }
+        
+        if (isset($_GET['search'])) {
+            $search = $_GET['search'];
+            $search_value = $search;
 
-        if ($page > 1) {
-            $start = ($page * 10) - 10;
+            $table = "SELECT * FROM chats INNER JOIN users ON chats.user_id = users.id WHERE comment LIKE :search";
+            $sql = $PDO->prepare($table);
+            $sql->bindValue(":search", '%'. $search .'%', PDO::PARAM_STR);
+            $sql->execute();
         } else {
-            $start = 0;
+            $search = '';
+            $search_value = '';
+
+            $table = "SELECT * FROM chats INNER JOIN users ON chats.user_id = users.id";
+            $sql = $PDO->query($table);
         }
-        $PDO = dbconnect();
-        $table = "SELECT * FROM chats INNER JOIN users ON chats.user_id = users.id LIMIT {$start}, 10";
-        $sql = $PDO->query($table);
     }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -39,45 +43,54 @@
 <?php
     
     echo '<div class="container">';
-    echo '<div class="my-3 p-3 bg-body rounded shadow-sm memo-list">';
-    echo '<h3 class="memo-title">みんなの掲示板</h2>';
+    echo '<div class="my-3 p-3 bg-body rounded shadow-sm chat-list">';
+    echo '<h3 class="memo-title">掲示板</h2>';
     echo '<p style="text-align: center; padding-bottom: 20px !important;" class="border-bottom">植物に関する質問や雑談にご活用ください。</p>';
     
+    echo '<div class="search-comment">';
+    echo '<div class="wrap">';
+    echo '<form action="" method="get">';
+    echo '<p>コメント検索</p>';
+    echo '<input type="text" name="search" value="' .$search_value. '"><br>';
+    echo '<input type="submit" name="" value="検索">';
+    echo '<input type="button" value="リセット" onclick="history.back()">';
+    echo '</form>';
+    echo '</div>';
+    echo '</div>';
+
+    echo '<div class="comment">';
     foreach ($sql as $row) {
                 $timestamp = strtotime($row['date']);
                 $date = date("Y-m-d H:i", $timestamp);
                     if ($_SESSION['login'] === ($row['id'])) {
-                        echo '<div class="pt-3 border-bottom align-right">';
+                        echo '<div class=" right-comment">';
+                        echo '<div class="pt-3 border-bottom comment-item">';
                         echo '<p class="pb-3 mb-0 medium lh-sm">';
                         echo '<span class="chat-date" style="font-size: 0.8em !important;">' . $date . '</span><br>';
-                        echo '<span><span style="color: black; font-weight: bold;">自分: </span>'. $row['comment'] . '<span>';
+                        echo '<span><span style="color: black; font-weight: bold;">あなた: </span>'. $row['comment'] . '<span>';
                         echo '</p>'; 
                         echo '</div>';
+                        echo '</div>';
+                        echo '</br>';
                     } else {
-                        echo '<div class="pt-3 border-bottom">';
+                        echo '<div class="left-comment">';
+                        echo '<div class="pt-3 border-bottom comment-item">';
                         echo '<p class="pb-3 mb-0 medium lh-sm">';
                         echo '<span class="chat-date" style="font-size: 0.8em !important;">' . $date . '</span><br>';
                         echo '<span><span style="color: black; font-weight: bold;">' . $row['name'] . '</span>' . ': ' . $row['comment'] . '<span>';
                         echo '</p>';
                         echo '</div>';
+                        echo '</div>';
+                        echo '</br>';
                     }
     }
+    echo '</div>';
     
     $PDO = dbconnect();
     $chats_num = $PDO->prepare("SELECT COUNT(*) FROM chats");
     $chats_num->execute();
     $chats_num = $chats_num->fetchColumn(); 
     $pagination = ceil($chats_num / 10);
-
-    echo '<div class="chat-pagination">';
-    for ($x = 1; $x <= $pagination ; $x++) {
-        if ($x == $_GET['page']) {
-            echo '<a href="?page=' . $x . '" style="color: black;">' . $x . '</a>'; 
-        } else {
-            echo '<a href="?page=' . $x . '">' . $x . '</a>';
-        }
-    }
-    echo '</div>';
 
     echo '<div class="leave-message">';
     echo '<a href="../chat/chat_post.php" class="btn btn-lg btn-primary">投稿する</a>';

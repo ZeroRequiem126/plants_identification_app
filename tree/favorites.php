@@ -30,8 +30,8 @@
 
             if ($count != 0 && !empty($_SESSION["login"])) {
 
-                echo '<h2>お気に入り一覧</h2>';
-                echo '<div class="album py-5 bg-light">';
+                echo '<h2>お気に入り</h2>';
+                echo '<div class="album py-5 bg-ligh favorite-items">';
                 echo '<div class="container">';
                 echo '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">';
 

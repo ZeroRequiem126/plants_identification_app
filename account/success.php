@@ -4,12 +4,12 @@
     
     $PDO = dbconnect();
 
-    if (isset($_SESSION['email'])) {
+    if (isset($_SESSION['user_id'])) {
 
         $message = 'ニックネーム「' . $_SESSION['name'] . '」で登録しました！';
 
         
-        $sql = "SELECT * FROM users WHERE name = '".$_SESSION["name"]."' AND email = '".$_SESSION["email"]."'";
+        $sql = "SELECT * FROM users WHERE name = '".$_SESSION["name"]."' AND user_id = '".$_SESSION["user_id"]."'";
         $stmt = $PDO->prepare($sql);
         $stmt->execute();
 
@@ -34,7 +34,7 @@
     echo '<div class="container">';
 
     foreach ($stmt as $row) {
-        if ($row["email"] ==  $_SESSION['email']) {
+        if ($row["user_id"] ==  $_SESSION['user_id']) {
             echo "<h2>会員登録しました</h2>";
             echo '<div class="balloon-general">';
             echo '<div class="faceicon">';

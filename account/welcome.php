@@ -4,7 +4,7 @@
 
     $PDO = dbconnect();
             
-    $sql = "SELECT * FROM users WHERE email = '".$_SESSION["email"]."'";
+    $sql = "SELECT * FROM users WHERE user_id = '".$_SESSION["user_id"]."'";
     $stmt = $PDO->prepare($sql);
     $stmt->execute();
 ?>
@@ -27,7 +27,7 @@
     echo '<div class="welcome-page">';
     echo '<div class="container">';
     foreach ($stmt as $row) {
-        if ($row["email"] == $_SESSION['email']) {
+        if ($row["user_id"] == $_SESSION['user_id']) {
             if(password_verify($_SESSION['password'], $row['password'])){
                 echo "<h2>ログインしました</h2>";
                 echo '<div class="balloon-general">';

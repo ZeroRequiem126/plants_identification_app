@@ -4,21 +4,21 @@
     
     $PDO = dbconnect();
 
-    if (isset($_POST['email']) && isset($_POST['password'])) {
+    if (isset($_POST['user_id']) && isset($_POST['password'])) {
 
-        $email = $_POST['email'];
+        $user_id = $_POST['user_id'];
         $password = $_POST['password'];   
         $password_hash = password_hash($password,PASSWORD_DEFAULT);
 
-        $_SESSION["email"] = $_POST['email'];
+        $_SESSION["user_id"] = $_POST['user_id'];
         $_SESSION["password"] =  $_POST['password'];
         
-        $sql = "SELECT * FROM users WHERE email = '".$_POST["email"]."'";
+        $sql = "SELECT * FROM users WHERE user_id = '".$_POST["user_id"]."'";
         $stmt = $PDO->prepare($sql);
         $stmt->execute();
 
         foreach ($stmt as $row) {
-            if ($row["email"] ==  $_SESSION['email']) {
+            if ($row["user_id"] ==  $_SESSION['user_id']) {
                 if(password_verify($_SESSION['password'], $row['password'])){
                     $_SESSION['login'] = $row['id'];
                 } 
@@ -49,8 +49,8 @@
     echo '<div class="container">';
     echo '<form action="" method="post">';
     echo '<div class="mb-3">';
-    echo '<h3>Eメール</h3>';
-    echo '<input type="text" name="email" class="form-control" id="exampleInputPassword1" required>';
+    echo '<h3>ID</h3>';
+    echo '<input type="text" name="user_id" class="form-control" id="exampleInputPassword1" required>';
     echo '</div>';
     echo '<div class="mb-3">';
     echo '<h3>パスワード</h3>';
