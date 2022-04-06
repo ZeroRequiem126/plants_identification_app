@@ -15,7 +15,7 @@
     
 <div class="jumbotron">
     <div class="container">
-        <p>山菜採りで、<br>登山が2倍楽しくなる。</p>
+        <p>登って、採って、<br>2倍楽しい。</p>
         <br>
             <div class="balloon">
                 <div class="faceicon">
