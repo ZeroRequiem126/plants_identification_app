@@ -1,22 +1,22 @@
 <header id="top">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../../index.php" id="site-title"><img src="../../assets/img/main/leaf.png" width="50" height="50"> 山菜採ろうぜ！</a>
+            <a class="navbar-brand" href="../index.php" id="site-title"><img src="img/main/leaf.png" width="50" height="50"> 山菜採ろうぜ！</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                 <?php if (isset($_SESSION['login'])): ?>
-                    <a class="nav-link menu-item" href="../../account/goodbye.php">ログアウト</a>
-                    <a class="nav-link menu-item" href="../../tree/favorites.php">お気に入り</a>
-                    <a class="nav-link menu-item" href="../../recipe/recipe_list.php">レシピ</a>
-                    <a class="nav-link menu-item" href="../../calender/calender.php">カレンダー</a>
-                    <a class="nav-link menu-item" href="../../chat/chat.php?page=1">掲示板</a>
+                    <a class="nav-link menu-item" href="../account/goodbye.php">ログアウト</a>
+                    <a class="nav-link menu-item" href="../tree/favorites.php">お気に入り</a>
+                    <a class="nav-link menu-item" href="../recipe/recipe_list.php">レシピ</a>
+                    <a class="nav-link menu-item" href="../calender/calender.php">カレンダー</a>
+                    <a class="nav-link menu-item" href="../chat/chat.php?page=1">掲示板</a>
                 <?php else: ?>
-                    <a class="nav-link menu-item" href="../../account/login.php">ログイン</a>
-                    <a class="nav-link menu-item" href="../../account/signup.php">新規登録</a>
-                    <a class="nav-link menu-item" href="../../recipe/recipe_list.php">レシピ</a>
+                    <a class="nav-link menu-item" href="../account/login.php">ログイン</a>
+                    <a class="nav-link menu-item" href="../account/signup.php">新規登録</a>
+                    <a class="nav-link menu-item" href="../recipe/recipe_list.php">レシピ</a>
                 <?php endif; ?>
                 </div>
             </div>

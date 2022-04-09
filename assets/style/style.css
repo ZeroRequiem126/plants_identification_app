@@ -1227,7 +1227,7 @@ h2 {
 }
 
 .chat-page .container .chat-list {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -1261,6 +1261,7 @@ h2 {
   background-color: #eeeeee !important;
   padding: 10px !important;
   display: inline-block;
+  border-radius: 10px;
 }
 
 .chat-page .container .right-comment {
@@ -1272,7 +1273,6 @@ h2 {
 }
 
 .chat-page .container .memo-list {
-  width: 60%;
   margin: 0 auto;
 }
 
@@ -1340,6 +1340,32 @@ h2 {
   margin-right: 15px;
   padding: 5px;
   background: #F2F2F2;
+}
+
+@media screen and (max-width: 480px) {
+  .chat-page {
+    padding: 0px;
+  }
+  .memo-list {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .chat-page {
+    padding: 0px;
+    margin: 0;
+  }
+  .memo-list {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .memo-list {
+    width: 60%;
+  }
 }
 
 /* chat-post.php */

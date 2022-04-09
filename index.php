@@ -4,14 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="assets/style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>ホーム</title>
 </head>
 <body>
 
-<?php include("assets/templates/header.html"); ?>
+<header id="top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php" id="site-title"><img src="assets/img/main/leaf.png" width="50" height="50"> 山菜採ろうぜ！</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <?php if (isset($_SESSION['login'])): ?>
+                    <a class="nav-link menu-item" href="account/goodbye.php">ログアウト</a>
+                    <a class="nav-link menu-item" href="tree/favorites.php">お気に入り</a>
+                    <a class="nav-link menu-item" href="recipe/recipe_list.php">レシピ</a>
+                    <a class="nav-link menu-item" href="calender/calender.php">カレンダー</a>
+                    <a class="nav-link menu-item" href="chat/chat.php?page=1">掲示板</a>
+                <?php else: ?>
+                    <a class="nav-link menu-item" href="account/login.php">ログイン</a>
+                    <a class="nav-link menu-item" href="account/signup.php">新規登録</a>
+                    <a class="nav-link menu-item" href="recipe/recipe_list.php">レシピ</a>
+                <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
     
 <div class="jumbotron">
     <div class="container">
