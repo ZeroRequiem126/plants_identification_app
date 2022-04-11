@@ -7,14 +7,18 @@
     const Category6 = document.getElementById('category-6');
     const Category7 = document.getElementById('category-7');
     const SearchButton = document.getElementById('js-search-button');
-    const EditButton = document.getElementById('edit-button');
     const yOffset = -50; 
 
-    window.onload = function() {
-        const y = Category1.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
+    let ref = document.referrer;
+
+    if (ref === "http://localhost:8888/plants-identification-app/index.php") {
+        window.onload = function() {
+            const y = Category1.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+        }
     }
 
+    if (Category1 || Category2 || Category3 || Category4 || Category5 || Category6 || Category7) {
     const select1 = document.querySelector('[name="leaf_attachment"]');
     select1.onchange = event => {
         const y = Category2.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -48,6 +52,7 @@
     const select7 = document.querySelector('[name="leaf_lateral_vein"]');
     select7.onchange = event => {
         SearchButton.scrollIntoView(true);
+    }
     }
 
     $(function () {

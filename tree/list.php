@@ -102,7 +102,7 @@
                 echo '</div>';
         ?>
 
-        <div class="search-button bg-white"><input type="submit" value ="再検索" class="bg-green txt-white" id="edit-button" onclick="history.back()"></div>
+        <div class="search-button bg-white"><input type="submit" value ="再検索" class="bg-green txt-white" id="edit-button" onclick="history.back(); document.referrer;"></div>
     </div>
     
     <?php include("../assets/templates/footer.html"); ?>
