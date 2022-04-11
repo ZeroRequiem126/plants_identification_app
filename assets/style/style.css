@@ -157,7 +157,7 @@ header .navbar-nav .navbar-toggler-icon {
 }
 
 .balloon .says {
-  font-size: 1.2em;
+  font-size: 1em;
   max-width: 500px;
   font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
   display: -webkit-box;
@@ -191,22 +191,11 @@ header .navbar-nav .navbar-toggler-icon {
 }
 
 .jumbotron {
-  background: url("../img/main/main-background-2.jpg") center no-repeat;
+  background: url("../img/main/main-background-image.png") center no-repeat;
   background-size: cover;
   width: 100%;
-  height: 700px;
+  height: 800px;
   position: relative;
-}
-
-.jumbotron::before {
-  content: '';
-  background-color: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
 .jumbotron .container {
@@ -304,10 +293,6 @@ header .navbar-nav .navbar-toggler-icon {
 
 .category ul li p span {
   font-size: 0.8em;
-}
-
-.category ul .category-item {
-  cursor: pointer;
 }
 
 .category .form {
@@ -1113,9 +1098,12 @@ h2 {
 .calender-page .container .calender h3 {
   color: black;
   font-weight: bold;
-  font-family: 'HanziPen SC',sans-serif;
   text-align: center;
   padding-bottom: 20px;
+}
+
+.calender-page .container .calender h3 a {
+  text-decoration: none;
 }
 
 .calender-page .container .calender tbody {
@@ -1227,8 +1215,11 @@ h2 {
 }
 
 .chat-page .container .chat-list {
-  width: 60%;
-  margin: 0 auto;
+  margin: 0 auto !important;
+}
+
+.chat-page .container .chat-list h3 {
+  padding-top: 20px;
 }
 
 .chat-page .container .search-comment {
@@ -1346,25 +1337,29 @@ h2 {
   .chat-page {
     padding: 0px;
   }
-  .memo-list {
+  .chat-list {
     width: 100%;
-    margin: 0;
+  }
+  h3 {
+    padding-top: 100px !important;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 800px) {
   .chat-page {
     padding: 0px;
-    margin: 0;
   }
-  .memo-list {
-    width: 80%;
+  .chat-list {
+    width: 100%;
+  }
+  h3 {
+    padding-top: 100px !important;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .memo-list {
-    width: 60%;
+  .chat-list {
+    width: 80% !important;
   }
 }
 

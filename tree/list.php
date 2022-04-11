@@ -95,7 +95,7 @@
                 echo '<div class="faceicon">';
                 echo '<img src="../assets/img/main/芋虫.png" width="300">';
                 echo '</div>';
-                echo '<h4 class="says">再検索してみて！</h4>';
+                echo '<h4 class="says">再検索してね！</h4>';
                 echo '</div>';
             }
                 echo '</div>';

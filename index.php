@@ -14,7 +14,7 @@
 <header id="top">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php" id="site-title"><img src="assets/img/main/leaf.png" width="50" height="50"> 山菜採ろうぜ！</a>
+            <a class="navbar-brand" href="index.php" id="site-title"><img src="assets/img/main/leaf.png" width="50" height="50"> 樹木検索</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,13 +39,13 @@
     
 <div class="jumbotron">
     <div class="container">
-        <p>登って、採って、<br>2倍楽しい。</p>
+        <p>葉の形から木を特定しよう。</p>
         <br>
             <div class="balloon">
                 <div class="faceicon">
-                <img src="assets/img/main/芋虫.png" width="300">
+                <img src="assets/img/main/芋虫.png" width="200">
                 </div>
-                <h4 class="says">葉っぱの「7つの特徴」から、山菜を探してみよう！</h4>
+                <h4 class="says">下から「葉っぱの7つの特徴」を選んでね！</h4>
             </div>
         <!-- <a class="btn btn-primary btn-lg btn-danger" href="#category-1" role="button" id="get-started">葉っぱを調べる</a> -->
     </div>

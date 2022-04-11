@@ -44,7 +44,7 @@
     
     echo '<div class="container">';
     echo '<div class="my-3 p-3 bg-body rounded shadow-sm chat-list">';
-    echo '<h3 class="memo-title">掲示板</h2>';
+    echo '<h3>掲示板</h3>';
     echo '<p style="text-align: center; padding-bottom: 20px !important;" class="border-bottom">植物に関する質問や雑談にご活用ください。</p>';
     
     echo '<div class="search-comment">';

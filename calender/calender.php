@@ -102,7 +102,7 @@
 <div class="calender-page">
     <div class="container">
         <div class="calender">
-            <h3><a href="?ym=<?php echo $prev; ?>">&lt;</a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
+            <h3><a href="?ym=<?php echo $prev; ?>">&laquo; </a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>"> &raquo;</a></h3>
             <table class="table table-bordered">
                 <tr>
                     <th>日</th>
