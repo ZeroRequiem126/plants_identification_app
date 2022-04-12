@@ -1391,7 +1391,7 @@ h2 {
     padding: 0px;
   }
   .chat-list {
-    width: 100%;
+    width: 80%;
   }
   h3 {
     padding-top: 100px !important;
@@ -1400,7 +1400,7 @@ h2 {
 
 @media screen and (min-width: 1280px) {
   .chat-list {
-    width: 80% !important;
+    width: 40% !important;
   }
 }
 
