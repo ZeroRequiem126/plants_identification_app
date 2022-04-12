@@ -43,7 +43,7 @@
         <br>
             <div class="balloon">
                 <div class="faceicon">
-                <img src="assets/img/main/芋虫.png" width="200">
+                <img src="assets/img/main/芋虫.png" width="200" class="balloon-img">
                 </div>
                 <h4 class="says">下から「葉の7つの特徴」を選んでね！</h4>
             </div>

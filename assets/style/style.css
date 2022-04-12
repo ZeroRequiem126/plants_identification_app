@@ -70,7 +70,7 @@
 }
 
 .balloon-general .says {
-  font-size: 1.2em;
+  font-size: 1.0em;
   max-width: 500px;
   font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
   display: -webkit-box;
@@ -97,6 +97,30 @@
   border: 10px solid transparent;
   right: -26px;
   border-left: 22px solid #ffa200;
+}
+
+@media screen and (max-width: 480px) {
+  .balloon-general .says {
+    font-size: 0.5em !important;
+  }
+  .balloon-general .faceicon img {
+    width: 100px !important;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .balloon-general .says {
+    font-size: 0.5em !important;
+  }
+  .balloon-general .faceicon img {
+    width: 150px !important;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .balloon-general .says {
+    font-size: 1.0em !important;
+  }
 }
 
 /* ヘッダー */
@@ -840,6 +864,10 @@ h2 {
   color: white;
 }
 
+.signup-form h3 {
+  padding: 0px !important;
+}
+
 .signup-form .container {
   color: white;
   font-weight: bold;
@@ -853,6 +881,7 @@ h2 {
   transform: translateY(-50%) translateX(-50%);
   background: rgba(0, 150, 50, 0.8);
   padding: 80px 0;
+  margin-top: 50px;
 }
 
 .signup-form .container h3 {
@@ -869,6 +898,24 @@ h2 {
 
 .signup-form .container #signup-button {
   margin-top: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .signup-form .container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .signup-form .container {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .signup-form .container {
+    width: 40%;
+  }
 }
 
 /* goodbye.php */
@@ -903,6 +950,30 @@ h2 {
   margin: 0px 10px;
 }
 
+@media screen and (max-width: 480px) {
+  .logout-page .container {
+    width: 90%;
+  }
+  .logout-page .container .btn {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .logout-page .container {
+    width: 60%;
+  }
+  .logout-page .container .btn {
+    font-size: 1.0em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logout-page .container {
+    width: 40%;
+  }
+}
+
 /* welcome.php */
 .welcome-page {
   background: url("../img/main/welcome-background.jpg") center no-repeat;
@@ -933,6 +1004,24 @@ h2 {
 
 .welcome-page a {
   margin: 0px 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .welcome-page .container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .welcome-page .container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .welcome-page .container {
+    width: 40%;
+  }
 }
 
 /* success.php */
@@ -976,6 +1065,10 @@ h2 {
   color: white;
 }
 
+.login-page h3 {
+  padding: 0 !important;
+}
+
 .login-page .container {
   color: white;
   font-weight: bold;
@@ -989,6 +1082,7 @@ h2 {
   transform: translateY(-50%) translateX(-50%);
   background: rgba(0, 150, 50, 0.8);
   padding: 80px 0;
+  margin-top: 50px;
 }
 
 .login-page .container h3 {
@@ -1005,6 +1099,24 @@ h2 {
 
 .login-page .container #login-button {
   margin-top: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .login-page .container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .login-page .container {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .login-page .container {
+    width: 40%;
+  }
 }
 
 /* memo_post.php */
