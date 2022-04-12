@@ -27,27 +27,27 @@
     const select2 = document.querySelector('[name="leaf_pattern"]');
     select2.onchange = event => {
         let y = Category3.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
+        setTimeout(() => window.scrollTo({top: y, behavior: 'smooth'}), 300);
     }
     const select3 = document.querySelector('[name="leaf_shape"]');
     select3.onchange = event => {
         let y = Category4.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
+        setTimeout(() => window.scrollTo({top: y, behavior: 'smooth'}), 300);
     }
     const select4 = document.querySelector('[name="leaf_blade"]');
     select4.onchange = event => {
         let y = Category5.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
+        setTimeout(() => window.scrollTo({top: y, behavior: 'smooth'}), 300);
     }
     const select5 = document.querySelector('[name="leaf_edge"]');
     select5.onchange = event => {
         let y = Category6.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
+        setTimeout(() => window.scrollTo({top: y, behavior: 'smooth'}), 300);
     }
     const select6 = document.querySelector('[name="leaf_vein"]');
     select6.onchange = event => {
         let y = Category7.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
+        setTimeout(() => window.scrollTo({top: y, behavior: 'smooth'}), 300);
     }
     const select7 = document.querySelector('[name="leaf_lateral_vein"]');
     select7.onchange = event => {
