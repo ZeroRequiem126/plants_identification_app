@@ -22,7 +22,7 @@
     const select1 = document.querySelector('[name="leaf_attachment"]');
     select1.onchange = event => {
         let y = Category2.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        setTimeout(() => window.scrollTo({top: y, behavior: 'smooth'}), 200);
+        setTimeout(() => window.scrollTo({top: y, behavior: 'smooth'}), 400);
     }
     const select2 = document.querySelector('[name="leaf_pattern"]');
     select2.onchange = event => {
