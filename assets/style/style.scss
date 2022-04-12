@@ -699,6 +699,10 @@ footer {
     .favorite-items {
         background-color: #93C031;
     }
+
+    h3 {
+        padding: 0 !important;
+    }
 }
     
 /* details.php */
@@ -1068,7 +1072,6 @@ a {
     }
 
     .container {
-        width: 70%;
         padding: 50px;
         font-family: 'Noto Sans', sans-serif;
 
@@ -1082,7 +1085,7 @@ a {
                 color: rgb(0, 0, 0);
                 font-weight: bold;
                 text-align: center;
-                padding-bottom: 20px;
+                padding: 0 0 20px 0 !important;
 
                 a {
                     text-decoration: none;
@@ -1127,6 +1130,24 @@ a {
                     margin-top: 10px;
                 }
             }
+        }
+    }
+
+    @media screen and (max-width:480px) {
+        .container {
+            width: 100%;
+        }
+    }
+    
+    @media screen and (min-width:480px) and ( max-width:800px) {
+        .container {
+            width: 80%;
+        }
+    }
+    
+    @media screen and (min-width:1280px) {
+        .container {
+            width: 60%;
         }
     }
 }
@@ -1408,8 +1429,10 @@ a {
 
 /* recipe_list.php */
 
-.recipe-image {
-
+.recipe-list {
+    .card-text {
+        padding: 0px !important;
+    }
 }
 
 
@@ -1441,7 +1464,7 @@ a {
 
         h3 {
             text-align: left;
-            padding: 10px 0;
+            padding: 10;
             font-weight: bold;
         }
 

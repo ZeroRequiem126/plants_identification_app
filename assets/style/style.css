@@ -719,6 +719,10 @@ footer .footB a:hover {
   background-color: #93C031;
 }
 
+.favorites-page h3 {
+  padding: 0 !important;
+}
+
 /* details.php */
 h2 {
   text-align: center;
@@ -1084,7 +1088,6 @@ h2 {
 }
 
 .calender-page .container {
-  width: 70%;
   padding: 50px;
   font-family: 'Noto Sans', sans-serif;
 }
@@ -1099,7 +1102,7 @@ h2 {
   color: black;
   font-weight: bold;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 0 0 20px 0 !important;
 }
 
 .calender-page .container .calender h3 a {
@@ -1144,6 +1147,24 @@ h2 {
 
 .calender-page .container .calender .record-button a {
   margin-top: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .calender-page .container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .calender-page .container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .calender-page .container {
+    width: 60%;
+  }
 }
 
 /* calender_post.php */
@@ -1408,6 +1429,10 @@ h2 {
 }
 
 /* recipe_list.php */
+.recipe-list .card-text {
+  padding: 0px !important;
+}
+
 /* recipe.php */
 .recipe-page .container {
   background-color: #f0f0f0;
@@ -1434,7 +1459,7 @@ h2 {
 
 .recipe-page .container h3 {
   text-align: left;
-  padding: 10px 0;
+  padding: 10;
   font-weight: bold;
 }
 
