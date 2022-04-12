@@ -11,9 +11,9 @@
 
     let ref = document.referrer;
 
-    if (ref === "http://localhost:8888/plants-identification-app/index.php") {
+    if (ref === "https://plants-identification-app.herokuapp.com/index.php") {
         window.onload = function() {
-            const y = Category1.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            let y = Category1.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({top: y, behavior: 'smooth'});
         }
     }
@@ -21,32 +21,32 @@
     if (Category1 || Category2 || Category3 || Category4 || Category5 || Category6 || Category7) {
     const select1 = document.querySelector('[name="leaf_attachment"]');
     select1.onchange = event => {
-        const y = Category2.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        let y = Category2.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({top: y, behavior: 'smooth'});
     }
     const select2 = document.querySelector('[name="leaf_pattern"]');
     select2.onchange = event => {
-        const y = Category3.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        let y = Category3.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({top: y, behavior: 'smooth'});
     }
     const select3 = document.querySelector('[name="leaf_shape"]');
     select3.onchange = event => {
-        const y = Category4.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        let y = Category4.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({top: y, behavior: 'smooth'});
     }
     const select4 = document.querySelector('[name="leaf_blade"]');
     select4.onchange = event => {
-        const y = Category5.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        let y = Category5.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({top: y, behavior: 'smooth'});
     }
     const select5 = document.querySelector('[name="leaf_edge"]');
     select5.onchange = event => {
-        const y = Category6.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        let y = Category6.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({top: y, behavior: 'smooth'});
     }
     const select6 = document.querySelector('[name="leaf_vein"]');
     select6.onchange = event => {
-        const y = Category7.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        let y = Category7.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({top: y, behavior: 'smooth'});
     }
     const select7 = document.querySelector('[name="leaf_lateral_vein"]');
