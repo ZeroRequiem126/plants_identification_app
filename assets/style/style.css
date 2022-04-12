@@ -216,7 +216,6 @@ header .navbar-nav .navbar-toggler-icon {
   letter-spacing: 0.1em;
   font-weight: bold;
   display: inline;
-  font-size: 4em;
 }
 
 .jumbotron .container p span {
@@ -230,6 +229,27 @@ header .navbar-nav .navbar-toggler-icon {
 
 .jumbotron .container p .intro-emphasis2 {
   color: #2f00ff;
+}
+
+@media screen and (max-width: 480px) {
+  .jumbotron .site-catchphrase {
+    width: 100%;
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .jumbotron .site-catchphrase {
+    width: 80%;
+    font-size: 3em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .jumbotron .site-catchphrase {
+    width: 60%;
+    font-size: 4em;
+  }
 }
 
 /* 各カテゴリ */
