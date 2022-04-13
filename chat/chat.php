@@ -5,7 +5,6 @@
 
     if (!empty($_SESSION["login"])) {
         
-
         $search = '';
         $search_value = '';
 
@@ -20,10 +19,7 @@
             }
         }
 
-        // Get matched records from the database
         $result = $PDO->query("SELECT * FROM chats $whrSQL ORDER BY id DESC");
-
-        // Highlight words in text
         function highlightWords($text, $word){
             $text = preg_replace('#'. preg_quote($word) .'#i', '<span style="background-color: #F9F902;">\\0</span>', $text);
             return $text;
@@ -72,7 +68,7 @@
         if (!empty($searchKeyword)) {
             $comment = !empty($searchKeyword)?highlightWords($row['comment'], $searchKeyword):$row['comment'];
         } else {
-            $comment = $row;
+            $comment = $row['comment'];
         }
 
                 $timestamp = strtotime($row['date']);
