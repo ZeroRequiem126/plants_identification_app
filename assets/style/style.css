@@ -101,7 +101,7 @@
 
 @media screen and (max-width: 480px) {
   .balloon-general .says {
-    font-size: 0.5em !important;
+    font-size: 0.7em !important;
   }
   .balloon-general .faceicon img {
     width: 100px !important;
@@ -110,7 +110,7 @@
 
 @media screen and (min-width: 480px) and (max-width: 800px) {
   .balloon-general .says {
-    font-size: 0.5em !important;
+    font-size: 0.9em !important;
   }
   .balloon-general .faceicon img {
     width: 150px !important;
@@ -234,6 +234,10 @@ header .navbar-nav .navbar-toggler-icon {
   transform: translateY(-50%) translateX(-50%);
 }
 
+.jumbotron .container .site-catchphrase {
+  font-size: 3em;
+}
+
 .jumbotron .container p {
   color: white;
   font-family: 'Osaka',sans-serif;
@@ -257,22 +261,19 @@ header .navbar-nav .navbar-toggler-icon {
 
 @media screen and (max-width: 480px) {
   .jumbotron .site-catchphrase {
-    width: 100%;
-    font-size: 2em;
+    font-size: 2em !important;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 800px) {
   .jumbotron .site-catchphrase {
-    width: 80%;
-    font-size: 3em;
+    font-size: 2.5em !important;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .jumbotron .site-catchphrase {
-    width: 60%;
-    font-size: 4em;
+    font-size: 3em !important;
   }
 }
 
@@ -784,6 +785,19 @@ h2 {
   padding: 50px 0;
 }
 
+@media screen and (max-width: 480px) {
+  .diary-button a {
+    font-size: 0.8em;
+    margin: 5px !important;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .diary-button a {
+    font-size: 1.0em;
+  }
+}
+
 .card-body {
   text-align: center;
 }
@@ -826,6 +840,31 @@ h2 {
 
 .tree-detail .feature .feature-content h4 {
   padding-top: 50px;
+}
+
+@media screen and (max-width: 480px) {
+  .tree-detail .feature .feature-content {
+    padding: 0 !important;
+    width: 100%;
+  }
+  .tree-detail .feature .feature-content a {
+    font-size: 0.8em;
+  }
+  .tree-detail .feature .feature-content img {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .tree-detail .feature .feature-content {
+    width: 80%;
+  }
+  .tree-detail .feature .feature-content a {
+    font-size: 1.0em;
+  }
+  .tree-detail .feature .feature-content img {
+    width: 80% !important;
+  }
 }
 
 .tree-detail .recipe-link {
@@ -947,14 +986,14 @@ h2 {
 }
 
 .logout-page .container a {
-  margin: 0px 10px;
+  margin: 10px 10px;
 }
 
 @media screen and (max-width: 480px) {
   .logout-page .container {
     width: 90%;
   }
-  .logout-page .container .btn {
+  .logout-page .container a {
     font-size: 0.8em;
   }
 }
@@ -963,7 +1002,7 @@ h2 {
   .logout-page .container {
     width: 60%;
   }
-  .logout-page .container .btn {
+  .logout-page .container a {
     font-size: 1.0em;
   }
 }
@@ -1008,7 +1047,7 @@ h2 {
 
 @media screen and (max-width: 480px) {
   .welcome-page .container {
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -1050,6 +1089,30 @@ h2 {
   transform: translateY(-50%) translateX(-50%);
   background: rgba(0, 150, 50, 0.8);
   padding: 80px 0;
+}
+
+@media screen and (max-width: 480px) {
+  .success-page .container {
+    width: 90%;
+  }
+  .success-page .container a {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .success-page .container {
+    width: 60%;
+  }
+  .success-page .container a {
+    font-size: 1.0em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .success-page .container {
+    width: 40%;
+  }
 }
 
 /* login.php */
@@ -1163,11 +1226,11 @@ h2 {
   margin-top: 10px;
 }
 
-.memo-post-page .container .buttons {
+.memo-post-page .container button {
   padding: 20px;
 }
 
-.memo-post-page .container .buttons a {
+.memo-post-page .container a {
   margin: 0 10px;
 }
 
@@ -1283,7 +1346,7 @@ h2 {
 
 @media screen and (max-width: 480px) {
   .calender-page .container {
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -1344,11 +1407,11 @@ h2 {
   margin-top: 10px;
 }
 
-.calender-post-page .container .buttons {
+.calender-post-page .container button {
   padding: 20px;
 }
 
-.calender-post-page .container .buttons a {
+.calender-post-page .container a {
   margin: 0 10px;
 }
 
@@ -1491,7 +1554,7 @@ h2 {
     padding: 0px;
   }
   .chat-list {
-    width: 100%;
+    width: 90%;
   }
   h3 {
     padding-top: 100px !important;
@@ -1552,12 +1615,36 @@ h2 {
   margin-top: 10px;
 }
 
-.chat-post-page .container .buttons {
-  padding: 20px;
+.chat-post-page .container button {
+  margin: 20px;
 }
 
-.chat-post-page .container .buttons a {
+.chat-post-page .container a {
   margin: 0 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .chat-post-page .container {
+    width: 90%;
+  }
+  .chat-post-page h3 {
+    padding: 0 !important;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .chat-post-page .container {
+    width: 80%;
+  }
+  .chat-post-page h3 {
+    padding: 0 !important;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .chat-post-page .container {
+    width: 60%;
+  }
 }
 
 /* recipe_list.php */
@@ -1633,6 +1720,36 @@ h2 {
 
 .recipe-page .container .recipe-remark .recipe-remark-title {
   font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+  .recipe-page .container {
+    width: 90%;
+  }
+  .recipe-page span {
+    font-size: 0.8em !important;
+  }
+  .recipe-page img {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .recipe-page .container {
+    width: 80%;
+  }
+  .recipe-page span {
+    font-size: 1.0em !important;
+  }
+  .recipe-page img {
+    width: 70% !important;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .recipe-page .container {
+    width: 60%;
+  }
 }
 
 /* recipe-list.php */

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="assets/style/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>ホーム</title>
 </head>
 <body>
@@ -117,7 +117,7 @@
             </li>
             <li class="category-item bg-grey txt-black">
                 <img src="assets/img/main/mark_question.png" class="mark-question">
-                <p class="category-name">6. よくその他</p>
+                <p class="category-name">6. その他</p>
             </li>
         </ul>
 
@@ -129,7 +129,7 @@
                 <option value="3">3. 奇数羽状複葉</option>
                 <option value="4">4. 掌状</option>
                 <option value="5">5. 出複葉</option>
-                <option value="6">6. よくその他</option>
+                <option value="6">6. その他</option>
             </select>
         </div>
     </div>
@@ -296,7 +296,7 @@
                 <option value="5">5. 波状縁</option>
                 <option value="6">6. 歯牙縁</option>
                 <option value="7">7. 一部鋸歯</option>
-                <option value="8">8. よくその他</option>
+                <option value="8">8. その他</option>
             </select>
         </div>
 
@@ -389,6 +389,5 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
 <script src="assets/js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
