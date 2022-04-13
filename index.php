@@ -39,13 +39,13 @@
     
 <div class="jumbotron">
     <div class="container">
-        <p class="site-catchphrase">葉っぱの形から木を特定しよう。</p>
+        <p class="site-catchphrase">葉っぱから木を特定しよう。</p>
         <br>
             <div class="balloon">
                 <div class="faceicon">
                 <img src="assets/img/main/芋虫.png" width="200" class="balloon-img">
                 </div>
-                <h4 class="says">下から「葉の7つの特徴」を選んでね！</h4>
+                <h4 class="says">⬇︎「葉の7つの特徴」を選んでね！</h4>
             </div>
         <!-- <a class="btn btn-primary btn-lg btn-danger" href="#category-1" role="button" id="get-started">葉っぱを調べる</a> -->
     </div>

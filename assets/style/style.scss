@@ -84,33 +84,33 @@
             border-left: 22px solid #ffa200;
         }
     }
+}
 
-    @media screen and (max-width:480px) {
+@media screen and (max-width:480px) {
 
-        .says {
-            font-size: 0.7em !important;
-        }
-
-        .faceicon img {
-            width: 100px !important;
-        }
+    .says {
+        font-size: 0.5em !important;
     }
-    
-    @media screen and (min-width:480px) and ( max-width:800px) {
 
-        .says {
-            font-size: 0.9em !important;
-        }
-
-        .faceicon img {
-            width: 150px !important;
-        }
+    .faceicon img {
+        width: 100px !important;
     }
-    
-    @media screen and (min-width:1280px) {
-        .says {
-            font-size: 1.0em !important;
-        }
+}
+
+@media screen and (min-width:480px) and ( max-width:800px) {
+
+    .says {
+        font-size: 0.9em !important;
+    }
+
+    .faceicon img {
+        width: 150px !important;
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .says {
+        font-size: 1.0em !important;
     }
 }
 
@@ -771,8 +771,9 @@ h2 {
     padding: 50px 0;
 
     @media screen and (max-width:480px) {
+
         a {
-            font-size: 0.8em;
+            font-size: 1.0em;
             margin: 5px !important;
         }
     }
@@ -808,8 +809,22 @@ h2 {
     height: auto;
 
         img {
-            width: 40% !important;
+            width: 40%;
             padding: 0 10px;
+        }
+
+        @media screen and (max-width:480px) {
+            img {
+                width: 100% !important;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media screen and (min-width:480px) and ( max-width:800px) {
+            img {
+                width: 80% !important;
+                margin-bottom: 10px;
+            }
         }
 
     .feature {
@@ -839,10 +854,6 @@ h2 {
                 a {
                     font-size: 0.8em;
                 }
-
-                img {
-                    width: 100% !important;
-                }
             }
         }
         
@@ -853,12 +864,9 @@ h2 {
                 a {
                     font-size: 1.0em;
                 }
-
-                img {
-                    width: 80% !important;
-                }
             }
         }
+
     }
 
     .recipe-link {
@@ -1344,19 +1352,23 @@ a {
 
     @media screen and (max-width:480px) {
         .container {
-            width: 90%;
+            width: 100% !important;
+        }
+
+        table {
+            width: 80% !important;
         }
     }
     
     @media screen and (min-width:480px) and ( max-width:800px) {
         .container {
-            width: 80%;
+            width: 80% !important;
         }
     }
     
     @media screen and (min-width:1280px) {
         .container {
-            width: 60%;
+            width: 60% !important;
         }
     }
 }
@@ -1564,7 +1576,7 @@ a {
     }
 
     .chat-list {
-        width: 90%;
+        width: 100%;
     }
 
     h3 {
@@ -1679,6 +1691,7 @@ a {
     .container {
         background-color: rgb(240, 240, 240);
         width: 50%; 
+        padding-top: 50px;
 
         .recipe-container {
             margin-bottom: 30px;
@@ -1755,14 +1768,15 @@ a {
         }
 
         span {
-            font-size: 0.8em !important;
+            font-size: 0.9em !important;
         }
 
         img {
             width: 100% !important;
         }
     }
-    
+
+
     @media screen and (min-width:480px) and ( max-width:800px) {
         .container {
             width: 80%;
@@ -1773,7 +1787,7 @@ a {
         }
 
         img {
-            width: 70% !important;
+            width: 80% !important;
         }
     }
     

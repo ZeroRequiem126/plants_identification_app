@@ -100,25 +100,25 @@
 }
 
 @media screen and (max-width: 480px) {
-  .balloon-general .says {
-    font-size: 0.7em !important;
+  .says {
+    font-size: 0.5em !important;
   }
-  .balloon-general .faceicon img {
+  .faceicon img {
     width: 100px !important;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 800px) {
-  .balloon-general .says {
+  .says {
     font-size: 0.9em !important;
   }
-  .balloon-general .faceicon img {
+  .faceicon img {
     width: 150px !important;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .balloon-general .says {
+  .says {
     font-size: 1.0em !important;
   }
 }
@@ -787,7 +787,7 @@ h2 {
 
 @media screen and (max-width: 480px) {
   .diary-button a {
-    font-size: 0.8em;
+    font-size: 1.0em;
     margin: 5px !important;
   }
 }
@@ -822,8 +822,22 @@ h2 {
 }
 
 .tree-detail img {
-  width: 40% !important;
+  width: 40%;
   padding: 0 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .tree-detail img {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .tree-detail img {
+    width: 80% !important;
+    margin-bottom: 10px;
+  }
 }
 
 .tree-detail .feature .feature-content {
@@ -850,9 +864,6 @@ h2 {
   .tree-detail .feature .feature-content a {
     font-size: 0.8em;
   }
-  .tree-detail .feature .feature-content img {
-    width: 100% !important;
-  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 800px) {
@@ -861,9 +872,6 @@ h2 {
   }
   .tree-detail .feature .feature-content a {
     font-size: 1.0em;
-  }
-  .tree-detail .feature .feature-content img {
-    width: 80% !important;
   }
 }
 
@@ -1346,19 +1354,22 @@ h2 {
 
 @media screen and (max-width: 480px) {
   .calender-page .container {
-    width: 90%;
+    width: 100% !important;
+  }
+  .calender-page table {
+    width: 80% !important;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 800px) {
   .calender-page .container {
-    width: 80%;
+    width: 80% !important;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .calender-page .container {
-    width: 60%;
+    width: 60% !important;
   }
 }
 
@@ -1554,7 +1565,7 @@ h2 {
     padding: 0px;
   }
   .chat-list {
-    width: 90%;
+    width: 100%;
   }
   h3 {
     padding-top: 100px !important;
@@ -1656,6 +1667,7 @@ h2 {
 .recipe-page .container {
   background-color: #f0f0f0;
   width: 50%;
+  padding-top: 50px;
 }
 
 .recipe-page .container .recipe-container {
@@ -1727,7 +1739,7 @@ h2 {
     width: 90%;
   }
   .recipe-page span {
-    font-size: 0.8em !important;
+    font-size: 0.9em !important;
   }
   .recipe-page img {
     width: 100% !important;
@@ -1742,7 +1754,7 @@ h2 {
     font-size: 1.0em !important;
   }
   .recipe-page img {
-    width: 70% !important;
+    width: 80% !important;
   }
 }
 

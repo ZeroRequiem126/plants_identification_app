@@ -5,20 +5,28 @@
 
     if (!empty($_SESSION["login"])) {
         
-        if (isset($_GET['search'])) {
-            $search = $_GET['search'];
-            $search_value = $search;
 
-            $table = "SELECT * FROM chats INNER JOIN users ON chats.user_id = users.id WHERE comment LIKE :search";
-            $sql = $PDO->prepare($table);
-            $sql->bindValue(":search", '%'. $search .'%', PDO::PARAM_STR);
-            $sql->execute();
-        } else {
-            $search = '';
-            $search_value = '';
+        $search = '';
+        $search_value = '';
 
-            $table = "SELECT * FROM chats INNER JOIN users ON chats.user_id = users.id";
-            $sql = $PDO->query($table);
+        $table = "SELECT * FROM chats INNER JOIN users ON chats.user_id = users.id";
+        $sql = $PDO->query($table);
+
+        $searchKeyword = $whrSQL = '';
+        if(isset($_GET['submit'])){
+            $searchKeyword = $_GET['search'];
+            if(!empty($searchKeyword)){
+                $whrSQL = "WHERE (comment LIKE '%".$searchKeyword."%')";
+            }
+        }
+
+        // Get matched records from the database
+        $result = $PDO->query("SELECT * FROM chats $whrSQL ORDER BY id DESC");
+
+        // Highlight words in text
+        function highlightWords($text, $word){
+            $text = preg_replace('#'. preg_quote($word) .'#i', '<span style="background-color: #F9F902;">\\0</span>', $text);
+            return $text;
         }
     }
 
@@ -51,8 +59,8 @@
     echo '<div class="wrap">';
     echo '<form action="" method="get">';
     echo '<p>コメント検索</p>';
-    echo '<input type="text" name="search" value="' .$search_value. '"><br>';
-    echo '<input type="submit" name="" value="検索">';
+    echo '<input type="text" name="search" value="' .$searchKeyword. '"><br>';
+    echo '<input type="submit" name="submit" value="検索">';
     echo '<input type="button" value="リセット" onclick="history.back()">';
     echo '</form>';
     echo '</div>';
@@ -60,6 +68,13 @@
 
     echo '<div class="comment">';
     foreach ($sql as $row) {
+
+        if (!empty($searchKeyword)) {
+            $comment = !empty($searchKeyword)?highlightWords($row['comment'], $searchKeyword):$row['comment'];
+        } else {
+            $comment = $row;
+        }
+
                 $timestamp = strtotime($row['date']);
                 $date = date("Y-m-d H:i", $timestamp);
                     if ($_SESSION['login'] === ($row['id'])) {
@@ -67,7 +82,7 @@
                         echo '<div class="pt-3 border-bottom comment-item">';
                         echo '<p class="pb-3 mb-0 medium lh-sm">';
                         echo '<span class="chat-date" style="font-size: 0.8em !important;">' . $date . '</span><br>';
-                        echo '<span><span style="color: black; font-weight: bold;">あなた: </span>'. $row['comment'] . '<span>';
+                        echo '<span><span style="color: black; font-weight: bold;">あなた: </span>'. $comment . '<span>';
                         echo '</p>'; 
                         echo '</div>';
                         echo '</div>';
@@ -77,7 +92,7 @@
                         echo '<div class="pt-3 border-bottom comment-item">';
                         echo '<p class="pb-3 mb-0 medium lh-sm">';
                         echo '<span class="chat-date" style="font-size: 0.8em !important;">' . $date . '</span><br>';
-                        echo '<span><span style="color: black; font-weight: bold;">' . $row['name'] . '</span>' . ': ' . $row['comment'] . '<span>';
+                        echo '<span><span style="color: black; font-weight: bold;">' . $row['name'] . '</span>' . ': ' . $comment . '<span>';
                         echo '</p>';
                         echo '</div>';
                         echo '</div>';
@@ -85,12 +100,6 @@
                     }
     }
     echo '</div>';
-    
-    $PDO = dbconnect();
-    $chats_num = $PDO->prepare("SELECT COUNT(*) FROM chats");
-    $chats_num->execute();
-    $chats_num = $chats_num->fetchColumn(); 
-    $pagination = ceil($chats_num / 10);
 
     echo '<div class="leave-message">';
     echo '<a href="../chat/chat_post.php" class="btn btn-lg btn-primary">投稿する</a>';
