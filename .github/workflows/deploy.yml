@@ -25,7 +25,7 @@ jobs:
           with:
             switches: -avz --delete
             path: dist/
-            remote_path: ${{ secrets./home/218vy_c8541067/public_html/ }}
+            remote_path: ${{ secrets./home/c8541067/public_html/tree-identification-app.conohawing.com/ }}
             remote_host: ${{ secrets.www313.conoha.ne.jp }}
             remote_user: ${{ secrets.c8541067 }}
             remote_port: ${{ secrets.8022 }}
